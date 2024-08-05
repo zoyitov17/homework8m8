@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import NavBar from './components/nav/NavBar'
+import Hero from './components/hero/Hero'
+import Experience from './components/experience/Experience'
+import About from './components/about/About'
+import Projects from './components/projects/Projects'
+import Connect from './components/connect/Connect'
+import Footer from './components/footer/Footer'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +23,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="bg-[rgba(18,18,18,1)] max-with-[1320px] mx-auto my-0">
+          {children}
+          <NavBar />
+          <Hero />
+          <Experience />
+          <About />
+          <Projects />
+          <Connect />
+          <Footer />
+        </div>
+      </body>
     </html>
   );
 }
